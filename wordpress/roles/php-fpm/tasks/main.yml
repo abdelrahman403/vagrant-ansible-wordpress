@@ -1,0 +1,24 @@
+---
+- name: Install php-fpm and deps
+  yum: name={{ item }} state=present
+  with_items:
+    - php71w-fpm
+    - php71w-mcrypt
+    - php71w-curl
+    - php71w-cli
+    - php71w-mysqlnd
+    - php71w-gd
+    - php71w-xsl
+    - php71w-json
+    - php71w-intl 
+    - php71w-pear
+    - php71w-devel
+    - php71w-mbstring
+    - php71w-zip
+    - php71w-soap
+
+- name: Create a new directory for session path.
+  file: path=/var/lib/php/session/ state=directory owner=nginx group=nginx mode=0777
+
+- name: Start PHP-Fpm Service
+  service: name=php-fpm state=started enabled=yes

@@ -1,0 +1,36 @@
+---
+#system Informations
+sys_user: wordpress
+sys_grp: wordpress
+user_id: 1002
+group_id: 1002
+
+# srv_hostname: Abdelrahman
+srv_pub_ip: 192.168.1.10 
+srv_pri_ip: localhost
+
+# This is used for the nginx + PHP server configuration.
+nginx_port: 80
+server_hostname: test.com
+rootdir_nginx: /home/{{ sys_user }}/public_html/wordpress/
+rootdir: /home/{{ sys_user }}/public_html/
+
+# MySQL settings
+mysqlservice: mysqld
+mysql_port: 3306
+db_host: localhost
+mysql_root_username: root
+mysql_root_password: wpRootPass
+
+# Wordpress Settings
+wp_version: latest
+wp_db_name: wordpressdb
+wp_db_user: wpuser
+wp_db_password: wppassword
+
+#Templates Files
+src_ng_conf: nginx_vhost.conf
+dest_ng_conf: /etc/nginx/conf.d/nginx_vhost.conf
+src_php_conf: php_fpm_conf.conf
+dest_php_conf: /etc/php-fpm.d/php_conf.conf
+

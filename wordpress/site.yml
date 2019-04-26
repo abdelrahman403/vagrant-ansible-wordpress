@@ -1,0 +1,15 @@
+---
+- name: Install Nginx, PHP-FPM, Mariadb and Wordpress
+  hosts: all
+  user: vagrant
+  become: yes
+  vars:
+    ansible_become_pass: vagrant
+  roles:
+    - repos
+    - system
+    - nginx
+    - php-fpm
+    - mariadb
+    - secure_db
+    - wordpress
