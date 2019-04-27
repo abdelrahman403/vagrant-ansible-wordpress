@@ -1,4 +1,4 @@
-# Wordpress Development Environment With Vagrant & Ansible
+## Wordpress Development Environment With Vagrant & Ansible
 
 Uses Vagrant to provision a virtual machine running on Centos7 for Wordpress development. Complete the installation by navigating to http://127.0.0.1:8080 and finishing the Wordpress wizard.
 
